@@ -22,7 +22,7 @@
   /* HEADER */
   .site-header {
     width: 100%;
-    background-color: rgba(225, 225, 225, 0.9); /* opaque white bar */
+    background-color: rgba(225, 225, 225, 0.9); /* opaque white */
     position: fixed;
     top: 0;
     left: 0;
@@ -39,12 +39,11 @@
   .header-left {
     display: flex;
     align-items: center;
-    gap: 10px; /* space between logos */
+    gap: 10px;
   }
 
   .school-logo {
     height: 40px; /* smaller logos */
-    transform: none; /* no rotation */
   }
 
   /* Navigation links on the right */
@@ -73,8 +72,8 @@
   /* TOP SECTION WITH MOUNTAIN IMAGE */
   .top-half {
     position: relative;
-    padding: 160px 20px 120px 20px;
-    min-height: 100vh;
+    padding: 100px 20px 20px 20px; /* push content below header */
+    min-height: 50vh;
     background-image: url('IMG_1802_VSCO.jpg');
     background-size: cover;
     background-position: center;
@@ -82,8 +81,7 @@
     color: white;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    align-items: center; /* keep horizontal centering */
     text-align: center;
   }
 
@@ -121,15 +119,13 @@
     line-height: 1.1;
   }
 
-  /* Split main title into two lines, center-aligned */
+  /* Split main title into two lines */
   .main-title .line1 {
     display: block;
-    text-align: center;
   }
 
   .main-title .line2 {
     display: block;
-    text-align: center;
     font-style: italic; /* only Collected Memories italicized */
   }
 
@@ -175,5 +171,6 @@
 
 </body>
 </html>
+
 
 
