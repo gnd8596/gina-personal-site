@@ -62,25 +62,31 @@
   .nav-links a:hover {
     color: #5a1f1f;
   }
+/* TOP HALF SECTION */
+.top-half {
+  padding: 100px 20px 20px 20px; /* keeps header from covering it */
+  min-height: 50vh;
+  background-color: white;
+  color: black;
+  text-align: center;
+}
 
-  /* Add top padding to .top-half so content isn’t hidden under fixed header */
-  .top-half {
-    padding: 100px 20px 20px 20px;
-  }
-    
-    .top-half {
-      padding: 20px 20px 20px 20px;
-      min-height: 50vh; /* Top half of the screen */
-      background-color: white;
-      color: black;
-      padding: 20px;
-      text-align: center;
-    }
+/* Title spacing */
+.top-half h1 {
+  margin-bottom: 0; /* no space under the title */
+}
 
-    .top-half img {
-      margin-top: 20px;
-      max-width: 150px;
-    }
+/* Subtitle spacing */
+.top-half p {
+  margin-top: 0; /* no space above subtitle */
+  font-size: 1.2rem; /* optional */
+}
+
+/* Image inside top half */
+.top-half img {
+  margin-top: 20px;
+  max-width: 150px;
+}
 
     .bottom-half {
       min-height: 50vh;
