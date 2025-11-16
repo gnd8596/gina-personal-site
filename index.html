@@ -1,25 +1,27 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>Gina's Website</title>
-  </head>
-  <body>
-    <h1>Simple Website Heading That I Changed</h1>
-    <p>This is an example paragraph. Anything in the <strong>bold text</strong> tag will appear on the page, just like this <strong>p</strong> tag and its contents.</p>
+<head>
+  <title>Gina's Website</title>
   <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
     
- .top-half {
+    .top-half {
       min-height: 50vh; /* Top half of the screen */
       background-color: white;
       color: black;
       padding: 20px;
       text-align: center;
     }
- .top-half img {
+
+    .top-half img {
       margin-top: 20px;
       max-width: 150px;
     }
- .bottom-half {
+
+    .bottom-half {
       min-height: 50vh; /* Bottom half of the screen */
       background-image: url('IMG_1802_VSCO.jpg');
       background-size: cover;
@@ -33,6 +35,22 @@
       text-align: center;
       padding: 20px;
     }
-</style>
+  </style>
 </head>
 <body>
+  <!-- Top half -->
+  <div class="top-half">
+    <h1>Simple Website Heading That I Changed</h1>
+    <p>This is an example paragraph. Anything in the <strong>bold text</strong> tag will appear on the page, just like this <strong>p</strong> tag and its contents.</p>
+    <a href="https://www.nytimes.com" target="_blank">Visit The New York Times</a>
+    <img src="https://via.placeholder.com/150" alt="Example Image">
+  </div>
+
+  <!-- Bottom half with background image -->
+  <div class="bottom-half">
+    <h2>Background Section</h2>
+    <p>This section displays your uploaded image as the background.</p>
+  </div>
+</body>
+</html>
+
