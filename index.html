@@ -4,139 +4,154 @@
   <title>Gina's Website</title>
   <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400&display=swap" rel="stylesheet">
   <style>
+    /* HEADER FONT */
+    .site-header,
+    .site-header * {
+      font-family: Helvetica, Arial, sans-serif !important;
+    }
 
-  /* HEADER FONT */
-  .site-header,
-  .site-header * {
-    font-family: Helvetica, Arial, sans-serif !important;
-  }
+    body {
+      margin: 0;
+      font-family: 'Frank Ruhl Libre', serif;
+      text-align: center;
+      line-height: 1.3;
+      font-weight: 400;
+    }
 
-  body {
-    margin: 0;
-    font-family: 'Frank Ruhl Libre', serif;
-    font-size: 3rem;
-    line-height: 1.2;
-    text-align: center;
-  }
+    /* HEADER */
+    .site-header {
+      width: 100%;
+      background-color: rgba(255,255,255,0.9); /* opaque white bar */
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+      box-sizing: border-box;
+    }
 
-  /* HEADER */
-  .site-header {
-    width: 100%;
-    background-color: rgba(225, 225, 225, 0.9); /* opaque white */
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    padding: 15px 40px; 
-    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-sizing: border-box;
-  }
+    .header-left {
+      display: flex;
+      align-items: center;
+    }
 
-  /* Logos on the left */
-  .header-left {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-  }
+    .school-logo {
+      height: 40px;
+      margin-right: 10px;
+    }
 
-  .school-logo {
-    height: 40px; /* smaller logos */
-  }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      justify-content: flex-end;
+      margin: 0;
+      padding: 0;
+      flex-wrap: nowrap;
+    }
 
-  /* Navigation links on the right */
-  .nav-links {
-    list-style: none;
-    display: flex;
-    justify-content: flex-end;
-    margin: 0;
-    padding: 0;
-    gap: 30px;
-  }
+    .nav-links li {
+      margin-left: 30px;
+    }
 
-  .nav-links a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 300;
-    font-size: 1.2rem;
-    white-space: nowrap;
-    transition: opacity 0.3s;
-  }
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 300;
+      font-size: 1.2rem;
+      white-space: nowrap;
+      transition: opacity 0.3s;
+    }
 
-  .nav-links a:hover {
-    opacity: 0.6;
-  }
+    .nav-links a:hover {
+      opacity: 0.6;
+    }
 
-  /* TOP SECTION WITH MOUNTAIN IMAGE */
-  .top-half {
-    position: relative;
-    padding: 100px 20px 20px 20px; /* push content below header */
-    min-height: 50vh;
-    background-image: url('IMG_1802_VSCO.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* keep horizontal centering */
-    text-align: center;
-  }
+    /* TOP SECTION WITH MOUNTAIN IMAGE */
+    .top-half {
+      position: relative;
+      padding: 160px 20px 120px 20px;
+      min-height: 100vh;
+      background-image: url('IMG_1802_VSCO.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
 
-  /* Black overlay for readability */
-  .top-half::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.2); 
-    z-index: 0;
-  }
+    /* Dark overlay for readability */
+    .top-half::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.3); 
+      z-index: 0;
+    }
 
-  .top-half > * {
-    position: relative;
-    z-index: 1;
-  }
+    .top-half > * {
+      position: relative;
+      z-index: 1;
+    }
 
-  /* Title + subtitle */
-  .small-title {
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 2.5rem;
-    margin: 0;
-    font-weight: 300;
-    line-height: 1.1;
-  }
+    /* Title + subtitle */
+    .small-title {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 2.5rem;
+      margin: 0 0 10px 0;
+    }
 
-  .main-title {
-    font-family: 'Frank Ruhl Libre', serif;
-    font-size: 4rem;
-    margin: 5px 0 15px 0;
-    font-weight: 400;
-    line-height: 1.1;
-  }
+    .main-title {
+      font-family: 'Frank Ruhl Libre', serif;
+      font-size: 4rem;
+      margin: 0 0 20px 0;
+    }
 
-  /* Split main title into two lines */
-  .main-title .line1 {
-    display: block;
-  }
+    .main-title .line1 {
+      display: block;
+      text-align: center;
+    }
 
-  .main-title .line2 {
-    display: block;
-    font-style: italic; /* only Collected Memories italicized */
-  }
+    .main-title .line2 {
+      display: block;
+      text-align: center;
+      font-style: italic;
+    }
 
-  .top-half a {
-    color: white;
-    text-decoration: underline;
-  }
+    .top-half a {
+      color: white;
+      text-decoration: underline;
+      margin-top: 10px;
+      display: inline-block;
+    }
 
-  .top-half a:hover {
-    color: #f0f0f0;
-  }
+    .top-half a:hover {
+      color: #f0f0f0;
+    }
+
+    /* WHITE SECTION BELOW MOUNTAIN IMAGE */
+    .white-section {
+      background-color: white;
+      color: black;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .white-section h2 {
+      font-family: 'Frank Ruhl Libre', serif;
+      font-size: 3rem;
+      margin: 0;
+    }
 
   </style>
 </head>
@@ -146,8 +161,8 @@
   <!-- HEADER -->
   <header class="site-header">
     <div class="header-left">
-      <img src="Nyu_short_color.svg.png" alt="NYU Logo" class="school-logo nyu-logo">
-      <img src="University_of_Colorado_Boulder_logo copy.png" alt="CU Boulder Logo" class="school-logo cu-logo">
+      <img src="Nyu_short_color.svg.png" alt="NYU Logo" class="school-logo">
+      <img src="University_of_Colorado_Boulder_logo copy.png" alt="CU Boulder Logo" class="school-logo">
     </div>
     <nav>
       <ul class="nav-links">
@@ -157,7 +172,7 @@
     </nav>
   </header>
 
-  <!-- TOP SECTION WITH IMAGE + TITLE -->
+  <!-- TOP SECTION WITH MOUNTAIN IMAGE -->
   <div class="top-half">
     <h2 class="small-title">Welcome To</h2>
     <h1 class="main-title">
@@ -169,8 +184,14 @@
     </a>
   </div>
 
+  <!-- WHITE SECTION BELOW -->
+  <div class="white-section">
+    <h2>Gina Dea</h2>
+  </div>
+
 </body>
 </html>
+
 
 
 
