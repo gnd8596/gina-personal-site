@@ -4,33 +4,19 @@
   <title>Gina's Website</title>
   <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400&display=swap" rel="stylesheet">
   <style>
-    /* HEADER FONT */
-    .site-header,
-    .site-header * {
-      font-family: Helvetica, Arial, sans-serif !important;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Frank Ruhl Libre', serif;
-      text-align: center;
-      line-height: 1.3;
-      font-weight: 400;
-    }
-
     /* HEADER */
     .site-header {
       width: 100%;
-      background-color: rgba(255,255,255,0.9); /* opaque white bar */
+      background-color: rgba(255, 255, 255, 0.9);
       position: fixed;
       top: 0;
       left: 0;
       z-index: 1000;
-      padding: 15px 40px;
+      padding: 15px 80px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
       box-sizing: border-box;
     }
 
@@ -42,15 +28,14 @@
     .school-logo {
       height: 40px;
       margin-right: 10px;
+      flex-shrink: 0;
     }
 
     .nav-links {
       list-style: none;
       display: flex;
-      justify-content: flex-end;
       margin: 0;
       padding: 0;
-      flex-wrap: nowrap;
     }
 
     .nav-links li {
@@ -60,6 +45,7 @@
     .nav-links a {
       text-decoration: none;
       color: #333;
+      font-family: Helvetica, Arial, sans-serif;
       font-weight: 300;
       font-size: 1.2rem;
       white-space: nowrap;
@@ -70,24 +56,23 @@
       opacity: 0.6;
     }
 
-    /* TOP SECTION WITH MOUNTAIN IMAGE */
+    /* MOUNTAIN IMAGE SECTION */
     .top-half {
       position: relative;
-      padding: 160px 20px 120px 20px;
-      min-height: 100vh;
+      padding: 120px 20px 20px 20px; /* space below header */
+      min-height: 80vh;
       background-image: url('IMG_1802_VSCO.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      color: white;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start; /* align text at top */
       align-items: center;
       text-align: center;
+      color: white;
     }
 
-    /* Dark overlay for readability */
     .top-half::before {
       content: "";
       position: absolute;
@@ -95,54 +80,49 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0,0,0,0.3); 
+      background-color: rgba(0,0,0,0.2); /* black overlay */
       z-index: 0;
     }
 
     .top-half > * {
       position: relative;
       z-index: 1;
+      margin: 10px 0;
     }
 
-    /* Title + subtitle */
     .small-title {
       font-family: Helvetica, Arial, sans-serif;
       font-size: 2.5rem;
-      margin: 0 0 10px 0;
+      margin: 0;
     }
 
     .main-title {
       font-family: 'Frank Ruhl Libre', serif;
       font-size: 4rem;
-      margin: 0 0 20px 0;
+      margin: 0;
     }
 
     .main-title .line1 {
       display: block;
-      text-align: center;
     }
 
     .main-title .line2 {
       display: block;
-      text-align: center;
       font-style: italic;
     }
 
     .top-half a {
       color: white;
       text-decoration: underline;
-      margin-top: 10px;
-      display: inline-block;
     }
 
     .top-half a:hover {
       color: #f0f0f0;
     }
 
-    /* WHITE SECTION BELOW MOUNTAIN IMAGE */
+    /* WHITE SECTION BELOW */
     .white-section {
       background-color: white;
-      color: black;
       text-align: center;
       padding: 60px 20px;
     }
@@ -151,6 +131,7 @@
       font-family: 'Frank Ruhl Libre', serif;
       font-size: 3rem;
       margin: 0;
+      color: #888888; /* lighter gray */
     }
 
   </style>
@@ -172,7 +153,7 @@
     </nav>
   </header>
 
-  <!-- TOP SECTION WITH MOUNTAIN IMAGE -->
+  <!-- MOUNTAIN IMAGE TOP SECTION -->
   <div class="top-half">
     <h2 class="small-title">Welcome To</h2>
     <h1 class="main-title">
@@ -191,7 +172,3 @@
 
 </body>
 </html>
-
-
-
-
