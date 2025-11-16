@@ -20,12 +20,6 @@
       box-sizing: border-box;
     }
 
-    .header-left {
-      display: flex;
-      align-items: center;
-    }
-
-
     .nav-links {
       list-style: none;
       display: flex;
@@ -51,30 +45,60 @@
       opacity: 0.6;
     }
 
-    /* MOUNTAIN IMAGE SECTION */
+    /* TOP SECTION WITH FADE + ZOOM IMAGES */
     .top-half {
       position: relative;
-      padding: 120px 20px 20px 20px; /* space below header */
+      padding: 120px 20px 20px 20px;
       min-height: 80vh;
-      background-image: url('IMG_1802_VSCO.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start; 
+      justify-content: flex-start;
       align-items: center;
       text-align: center;
       color: white;
+      overflow: hidden;
     }
 
-    .top-half::before {
-      content: "";
+    .image-fade-container {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .image-fade-container img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      animation: fadeZoom 25s infinite;
+    }
+
+    .image-fade-container img:nth-child(1) { animation-delay: 0s; }
+    .image-fade-container img:nth-child(2) { animation-delay: 5s; }
+    .image-fade-container img:nth-child(3) { animation-delay: 10s; }
+    .image-fade-container img:nth-child(4) { animation-delay: 15s; }
+    .image-fade-container img:nth-child(5) { animation-delay: 20s; }
+
+    @keyframes fadeZoom {
+      0% { opacity: 0; transform: scale(1); }
+      10% { opacity: 1; transform: scale(1.02); }
+      30% { opacity: 1; transform: scale(1.05); }
+      40% { opacity: 0; transform: scale(1.05); }
+      100% { opacity: 0; transform: scale(1); }
+    }
+
+    /* Overlay for readability */
+    .top-half::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       background-color: rgba(0,0,0,0.2);
       z-index: 0;
     }
@@ -82,20 +106,21 @@
     .top-half > * {
       position: relative;
       z-index: 1;
-      margin: 10px 0;
+      margin: 5px 0;
     }
 
+    /* Titles */
     .small-title {
       font-family: Helvetica, Arial, sans-serif;
       font-weight: 300;
-      font-size: 2rem;
+      font-size: 1.8rem;
       margin: 0;
     }
 
     .main-title {
       font-family: 'Frank Ruhl Libre', serif;
       font-weight: 300;
-      font-size: 4rem;
+      font-size: 3.5rem;
       margin: 0;
     }
 
@@ -111,56 +136,14 @@
     .top-half a {
       color: white;
       text-decoration: underline;
+      font-weight: 300;
     }
 
     .top-half a:hover {
       color: #f0f0f0;
     }
 
-    /* Image Fade Container */
-.image-fade-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: 0; /* behind the text */
-}
-
-.image-fade-container img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  background-color: rgba(0,0,0,0.3);
-  animation: fade 16s infinite;
-}
-
-.image-fade-container img:nth-child(1) { animation-delay: 0s; }
-.image-fade-container img:nth-child(2) { animation-delay: 5s; }
-.image-fade-container img:nth-child(3) { animation-delay: 10s; }
-.image-fade-container img:nth-child(4) { animation-delay: 15s; }
-.image-fade-container img:nth-child(5) { animation-delay: 20s; }
-
-@keyframes fadeZoom {
-  0% { opacity: 0; transform: scale(1); }
-  10% { opacity: 1; transform: scale(1.05); }
-  30% { opacity: 1; transform: scale(1.1); }
-  40% { opacity: 0; transform: scale(1.1); }
-  100% { opacity: 0; transform: scale(1); }
-
-/* Ensure text stays above images */
-.top-half > h2,
-.top-half > h1,
-.top-half > a {
-  position: relative;
-  z-index: 1;
-}
-
-    /* WHITE SECTION BELOW */
+    /* WHITE SECTION */
     .white-section {
       background-color: white;
       text-align: center;
@@ -172,37 +155,37 @@
       font-weight: 300;
       font-size: 3rem;
       margin: 0;
-      color: #888888; 
+      color: #888888;
     }
-    
-.white-section .id-photo {
-  width: 150px; 
-  height: auto;
-  border-radius: 5px; 
-  margin-bottom: 20px; 
-}
+
+    .white-section .id-photo {
+      width: 150px;
+      height: auto;
+      border-radius: 5px;
+      margin: 20px auto;
+      display: block;
+    }
+
     .white-section .subtitle {
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: 300; /* lighter */
-  font-size: 1rem;  /* much smaller */
-  color: #555555;   /* darker gray for contrast */
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-top: 10px;
-}
-    
-.white-section .bio {
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: 300;        
-  font-size: 1rem;         
-  color: #555555;          
-  line-height: 1.6;        
-  max-width: 800px;           
-  margin: 20px auto 0 auto;  
-  text-align: center;       
-}
+      font-family: Helvetica, Arial, sans-serif;
+      font-weight: 300;
+      font-size: 0.9rem;
+      color: #555555;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 10px;
+    }
 
-
+    .white-section .bio {
+      font-family: Helvetica, Arial, sans-serif;
+      font-weight: 300;
+      font-size: 1rem;
+      color: #555555;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 20px auto 0 auto;
+      text-align: center;
+    }
   </style>
 </head>
 
@@ -210,8 +193,6 @@
 
   <!-- HEADER -->
   <header class="site-header">
-    <div class="header-left">
-    </div>
     <nav>
       <ul class="nav-links">
         <li><a href="about.html">About</a></li>
@@ -220,38 +201,34 @@
     </nav>
   </header>
 
-  <!-- Top Section with Fading Images -->
-<div class="top-half">
-  <!-- Image Fade Container -->
-  <div class="image-fade-container">
-    <img src="IMG_1802_VSCO.jpg" alt="Mountain">
-    <img src="giverny_garden.jpg" alt="Giverny Garden">
-    <img src="Bar_Hemingway.jpg" alt="Bar Hemingway">
-    <img src="Sko_Buffs.jpg" alt="Sko Buffs">
-    <img src="monet_home.jpg" alt="Monet Home">
+  <!-- TOP SECTION WITH FADE + ZOOM IMAGES -->
+  <div class="top-half">
+    <div class="image-fade-container">
+      <img src="IMG_1802_VSCO.jpg" alt="Mountain">
+      <img src="giverny_garden.jpg" alt="Giverny Garden">
+      <img src="Bar_Hemingway.jpg" alt="Bar Hemingway">
+      <img src="Sko_Buffs.jpg" alt="Sko Buffs">
+      <img src="monet_home.jpg" alt="Monet Home">
+    </div>
+
+    <h2 class="small-title">Welcome To</h2>
+    <h1 class="main-title">
+      <span class="line1">Gina's</span>
+      <span class="line2"><em>Collected Memories</em></span>
+    </h1>
+    <a href="https://scholar.colorado.edu/concern/undergraduate_honors_theses/p8418p875">Undergraduate Honors Thesis</a>
   </div>
 
-  <!-- Text on top -->
-  <h2 class="small-title">Welcome To</h2>
-  <h1 class="main-title">
-    <span class="line1">Gina's</span>
-    <span class="line2"><em>Collected Memories</em></span>
-  </h1>
-  <a href="https://scholar.colorado.edu/concern/undergraduate_honors_theses/p8418p875">
-    Undergraduate Honors Thesis
-  </a>
-</div>
-
- <!-- WHITE SECTION -->
-<div class="white-section">
-  <h2>Gina Dea</h2>
-  <img src="nyu id photo.jpg" alt="Gina Dea ID Photo" class="id-photo">
-  <p class="subtitle">GRADUATE STUDENT AT NEW YORK UNIVERSITY</p>
-  <p class="bio">
-    Gina Dea studies Moving Image Archiving and Preservation at New York University’s Tisch School of the Arts. She earned a Bachelor of Arts in Cinema Studies from the University of Colorado Boulder, where she wrote an honors thesis titled <i>We Shall Overcome: Women in the American Workforce, On- and Off-Screen (1960-1989)</i>, graduating <i>summa cum laude</i>. With a foundation in film history and theory and current archival training, her scholarly interests include gender dynamics—with a particular focus on women’s roles on-screen and behind the camera—American cinema of the 1960s and 1970s, approaching film as both art and object, and exploring the emotional weight and beauty of images inseparable from their physical deterioration. She is currently developing a research project on actress, director, and centenarian Lee Grant.
-  </p>
-</div>
-
+  <!-- WHITE SECTION -->
+  <div class="white-section">
+    <h2>Gina Dea</h2>
+    <img src="nyu id photo.jpg" alt="Gina Dea ID Photo" class="id-photo">
+    <p class="subtitle">GRADUATE STUDENT AT NEW YORK UNIVERSITY</p>
+    <p class="bio">
+      Gina Dea studies Moving Image Archiving and Preservation at New York University’s Tisch School of the Arts. She earned a Bachelor of Arts in Cinema Studies from the University of Colorado Boulder, where she wrote an honors thesis titled <i>We Shall Overcome: Women in the American Workforce, On- and Off-Screen (1960-1989)</i>, graduating <i>summa cum laude</i>. With a foundation in film history and theory and current archival training, her scholarly interests include gender dynamics—with a particular focus on women’s roles on-screen and behind the camera—American cinema of the 1960s and 1970s, approaching film as both art and object, and exploring the emotional weight and beauty of images inseparable from their physical deterioration. She is currently developing a research project on actress, director, and centenarian Lee Grant.
+    </p>
+  </div>
 
 </body>
 </html>
+
