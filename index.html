@@ -38,32 +38,48 @@
   z-index: 1000;
   padding: 15px 80px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.school-logo {
+  height: 50px;  
+  margin-right: 10px; /* space between logos */
+  flex-shrink: 0; /* prevent shrinking */
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  justify-content: flex-end; /* moves links to RIGHT */
+  justify-content: flex-end;
   margin: 0;
   padding: 0;
+  flex-wrap: nowrap; /* prevent wrapping */
 }
 
 .nav-links li {
-  margin-left: 40px; /* spacing between About + Contact */
+  margin-left: 30px;
 }
 
 .nav-links a {
   text-decoration: none;
-  color: white; /* matches your white title text */
+  color: #333;
   font-family: Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-size: 1.2rem;
-  letter-spacing: 0.5px;
   transition: opacity 0.3s;
+  white-space: nowrap; /* prevent cutting off */
 }
 
 .nav-links a:hover {
-  opacity: 0.7;
+  opacity: 0.6;
 }
 
 
@@ -137,6 +153,10 @@
 
   <!-- Header -->
   <header class="site-header">
+  <div class="header-left">
+    <img src="Nyu_short_color.svg.png" alt="NYU Logo" class="school-logo nyu-logo">
+    <img src="University_of_Colorado_Boulder_logo copy.png" alt="CU Boulder Logo" class="school-logo cu-logo">
+  </div>
   <nav>
     <ul class="nav-links">
       <li><a href="about.html">About</a></li>
@@ -144,7 +164,7 @@
     </ul>
   </nav>
 </header>
-
+  
   <!-- TOP SECTION WITH IMAGE + TITLE -->
   <div class="top-half">
 
