@@ -64,22 +64,44 @@
   }
 /* TOP HALF SECTION */
 .top-half {
-  padding: 100px 20px 20px 20px; /* keeps header from covering it */
+  position: relative;
+  padding: 120px 20px 20px 60px;
   min-height: 50vh;
   background-color: white;
   color: black;
   text-align: center;
 }
 
+  .school-logo {
+  position: absolute;
+  width: auto;
+}
+
+/* NYU logo: slightly higher and rotated left */
+.nyu-logo {
+  bottom: 120px;
+  left: 20px;
+  height: 80px;
+  transform: rotate(-5deg);
+}
+
+/* CU Boulder logo: slightly lower and rotated right */
+.cu-logo {
+  bottom: 50px;
+  left: 120px;
+  height: 60px;
+  transform: rotate(5deg);
+}
+    
 /* Title spacing */
 .top-half h1 {
-  margin-bottom: 0; /* no space under the title */
+  margin-bottom: 0;
 }
 
 /* Subtitle spacing */
 .top-half p {
-  margin-top: 0; /* no space above subtitle */
-  font-size: 1.2rem; /* optional */
+  margin-top: 0;
+  font-size: 1.2rem; 
 }
 
 /* Image inside top half */
@@ -123,27 +145,6 @@
   position: relative;
   z-index: 1;
 }
-
-   .school-logo {
-  position: absolute;
-  width: auto;
-}
-
-/* NYU logo: slightly higher and rotated left */
-.nyu-logo {
-  bottom: 320px;
-  left: 20px;
-  height: 80px;
-  transform: rotate(-5deg);
-}
-
-/* CU Boulder logo: slightly lower and rotated right */
-.cu-logo {
-  bottom: 50px;
-  left: 120px;
-  height: 60px;
-  transform: rotate(5deg);
-}
   </style>
 </head>
 <body>
@@ -164,14 +165,11 @@
     <h1>Collected Memories.</h1>
     <p>Chronicles of my 2024-2025 life.</p>
     <a href="https://scholar.colorado.edu/concern/undergraduate_honors_theses/p8418p875">Undergraduate Honors Thesis</a>
-  </div>
-
-  <!-- Bottom half with background image -->
-  <div class="bottom-half">
+  
     <!-- School logos -->
   <img src="Nyu_short_color.svg.png" alt="NYU Logo" class="school-logo nyu-logo">
   <img src="University_of_Colorado_Boulder_logo copy.png" alt="CU Boulder Logo" class="school-logo cu-logo">
-  </div>
+</div>
 </body>
 </html>
 
