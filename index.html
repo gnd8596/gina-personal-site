@@ -110,19 +110,26 @@
   /* Title + subtitle */
   .small-title {
     font-family: Helvetica, Arial, sans-serif;
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin: 0;
+  font-weight: 300;
+  line-height: 1.1;
   }
 
   .main-title {
     font-family: 'Frank Ruhl Libre', serif;
     font-size: 4rem;
-    margin: 10px 0 20px 0;
+    margin: 5px 0 15px 0;
+    font-weight: 400;
+  line-height: 1.1;
   }
 
   /* Split main title into two lines */
   .main-title .line1,
-  .main-title .line2 {
+  .main-title .line2.italicized {
+  font-style: italic;
+}
+
     display: block;
     text-align: center;
   }
@@ -179,7 +186,7 @@
     <h2 class="small-title">Welcome To</h2>
     <h1 class="main-title">
       <span class="line1">Gina's</span>
-      <span class="line2">Collected Memories</span>
+      <span class="line2 italicized">Collected Memories</span>
     </h1>
     <a href="https://scholar.colorado.edu/concern/undergraduate_honors_theses/p8418p875">
       Undergraduate Honors Thesis
