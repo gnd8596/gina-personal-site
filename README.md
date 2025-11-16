@@ -25,7 +25,7 @@ This is my personal website showcasing my work, studies, and projects.
 
 ## Screenshots
 ![Home Page](home-screenshot.png)
-![Home Page](home-about-screenshot.jpg)
+![Home Page (About)](home-about-screenshot.png)
 ![Contact Page](contact-screenshot.png)
 
 
