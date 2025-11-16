@@ -29,40 +29,42 @@
   }
 
   /* HEADER */
-  .site-header {
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0); /* fully transparent */
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    padding: 10px 0;
-  }
+.site-header {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0); /* transparent over image */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 20px 40px;
+}
 
-  .nav-links {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-  }
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end; /* moves links to RIGHT */
+  margin: 0;
+  padding: 0;
+}
 
-  .nav-links li {
-    margin: 0 20px;
-  }
+.nav-links li {
+  margin-left: 40px; /* spacing between About + Contact */
+}
 
-  .nav-links a {
-    text-decoration: none;
-    color: white; /* WHITE HEADER TEXT */
-    font-family: Helvetica, Arial, sans-serif;
-    font-weight: 300;
-    font-size: 1.2rem;
-    transition: color 0.3s;
-  }
+.nav-links a {
+  text-decoration: none;
+  color: white; /* matches your white title text */
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+  transition: opacity 0.3s;
+}
 
-  .nav-links a:hover {
-    color: #f0f0f0;
-  }
+.nav-links a:hover {
+  opacity: 0.7;
+}
+
 
   /* TOP SECTION WITH MOUNTAIN IMAGE */
   .top-half {
@@ -134,15 +136,13 @@
 
   <!-- Header -->
   <header class="site-header">
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
   <!-- TOP SECTION WITH IMAGE + TITLE -->
   <div class="top-half">
