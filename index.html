@@ -3,10 +3,11 @@
 <head>
   <title>Gina's Website</title>
 <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400&display=swap" rel="stylesheet">
-<style>
+  <style>
 
-  /* Header font override */
-  .site-header, .site-header * {
+  /* HEADER FONT */
+  .site-header,
+  .site-header * {
     font-family: Helvetica, Arial, sans-serif !important;
   }
 
@@ -19,6 +20,7 @@
   }
 
   h1 {
+    font-family: 'Frank Ruhl Libre', serif;
     margin-bottom: 0.2em;
   }
 
@@ -29,12 +31,11 @@
   /* HEADER */
   .site-header {
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0); /* fully transparent */
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     padding: 10px 0;
   }
 
@@ -52,89 +53,83 @@
 
   .nav-links a {
     text-decoration: none;
-    color: #DAA520;
+    color: white; /* WHITE HEADER TEXT */
+    font-family: Helvetica, Arial, sans-serif;
     font-weight: 300;
     font-size: 1.2rem;
+    transition: color 0.3s;
   }
 
   .nav-links a:hover {
-    color: #5a1f1f;
+    color: #f0f0f0;
   }
 
-  /* TOP HALF */
+  /* TOP SECTION WITH MOUNTAIN IMAGE */
   .top-half {
-    padding: 120px 20px 50px 20px;
-    min-height: 50vh;
-    background-color: white;
-    color: black;
     position: relative;
-  }
-
-  /* Title spacing */
-  .top-half h1 {
-    margin-bottom: 0;
-  }
-
-  /* Subtitle spacing */
-  .top-half p {
-    margin-top: 0;
-    font-size: 1.2rem;
-  }
-
-  /* School logos */
-  .school-logo {
-    position: absolute;
-    width: auto;
-  }
-
-  .nyu-logo {
-    bottom: 80px;
-    left: 20px;
-    height: 90px;
-    transform: rotate(-5deg);
-  }
-
-  .cu-logo {
-    bottom: 20px;
-    left: 120px;
-    height: 75px;
-    transform: rotate(5deg);
-  }
-
-  /* BOTTOM HALF (mountain image) */
-  .bottom-half {
-    height: 55vh; /* THIS FIXES YOUR ISSUE */
-    position: relative;
+    padding: 160px 20px 120px 20px;
+    min-height: 100vh;
     background-image: url('IMG_1802_VSCO.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
+    /* overlay for readability */
     color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
   }
 
-  /* white overlay */
-  .bottom-half::before {
+  /* White semi-transparent overlay */
+  .top-half::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255,255,255,0.2);
+    background-color: rgba(0,0,0,0.2); 
     z-index: 0;
   }
 
-  .bottom-half > * {
+  .top-half > * {
     position: relative;
     z-index: 1;
   }
 
-</style>
+  /* Title + subtitle */
+  .top-half h1,
+  .top-half p,
+  .top-half a {
+    color: white;
+  }
+
+  .top-half a:hover {
+    color: #f0f0f0;
+  }
+
+  /* LOGOS IN TOP SECTION */
+  .school-logo {
+    position: absolute;
+    width: auto;
+    z-index: 2;
+  }
+
+  .nyu-logo {
+    top: 40px;
+    left: 20px;
+    height: 80px;
+    transform: rotate(-5deg);
+  }
+
+  .cu-logo {
+    top: 140px;
+    left: 120px;
+    height: 60px;
+    transform: rotate(5deg);
+  }
+
+  </style>
 </head>
+
 <body>
 
   <!-- Header -->
@@ -149,25 +144,20 @@
     </nav>
   </header>
 
-  <!-- TOP HALF -->
+  <!-- TOP SECTION WITH IMAGE + TITLE -->
   <div class="top-half">
-    <h1>Collected Memories.</h1>
-    <p>Chronicles of my 2024-2025 life.</p>
 
+    <h1>Collected Memories.</h1>
+    <p>Chronicles of my 2024–2025 life.</p>
     <a href="https://scholar.colorado.edu/concern/undergraduate_honors_theses/p8418p875">
       Undergraduate Honors Thesis
     </a>
 
     <!-- School logos -->
-    <img src="Nyu_short_color.svg.png" class="school-logo nyu-logo">
-    <img src="University_of_Colorado_Boulder_logo copy.png" class="school-logo cu-logo">
-  </div>
+    <img src="Nyu_short_color.svg.png" alt="NYU Logo" class="school-logo nyu-logo">
+    <img src="University_of_Colorado_Boulder_logo copy.png" alt="CU Boulder Logo" class="school-logo cu-logo">
 
-  <!-- BOTTOM HALF -->
-  <div class="bottom-half">
   </div>
 
 </body>
 </html>
-
-
