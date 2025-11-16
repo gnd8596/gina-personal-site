@@ -65,52 +65,48 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;
   overflow: hidden;
+  z-index: 0; 
+
 }
 
   .image-fade-container img {
   position: absolute;
-  top: 0; 
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  opacity: 0;
+  animation: fade 16s infinite;
 
-  opacity: 0;      
-  animation: fadeOnly 12s infinite;
-} 
+}
 
 .image-fade-container img:nth-child(1) { animation-delay: 0s; }
-.image-fade-container img:nth-child(2) { animation-delay: 2.4s; }
-.image-fade-container img:nth-child(3) { animation-delay: 4.8s; }
-.image-fade-container img:nth-child(4) { animation-delay: 7.2s; }
-.image-fade-container img:nth-child(5) { animation-delay: 9.6s; }
+.image-fade-container img:nth-child(2) { animation-delay: 4s; }
+.image-fade-container img:nth-child(3) { animation-delay: 8s; }
+.image-fade-container img:nth-child(4) { animation-delay: 12s; }
+.image-fade-container img:nth-child(5) { animation-delay: 16s; }
 
 
-@keyframes fadeOnly {
-  0%   { opacity: 0; }
-  10%  { opacity: 1; }
-  30%  { opacity: 1; }
-  40%  { opacity: 0; }
+@keyframes fade {
+
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  30% { opacity: 1; }
+  40% { opacity: 0; }
   100% { opacity: 0; }
+
 }
 
-.top-half::before {
-  content: "";
-  position: absolute;
-  top: 0; 
-  left: 0;
-  width: 100%; 
-  height: 100%;
-  background-color: rgba(0,0,0,0.12);
-  z-index: 1;
-  pointer-events: none;
-}
-    
-.top-half > * {
-  position: relative;
-  z-index: 2;
+/* Ensure text stays above images */
+
+.top-half > h2,
+.top-half > h1,
+.top-half > a {
+position: relative;
+z-index: 1;
+
 }
     
     /* Titles */
@@ -217,22 +213,34 @@
     </nav>
   </header>
 
-  <!-- TOP SECTION WITH FADE + ZOOM IMAGES -->
-  <div class="top-half">
-    <div class="image-fade-container">
-      <img src="IMG_1802_VSCO.jpg" alt="Mountain">
-      <img src="giverny_garden.jpg" alt="Giverny Garden">
-      <img src="Bar_Hemingway.jpg" alt="Bar Hemingway">
-      <img src="Sko_Buffs.jpg" alt="Sko Buffs">
-      <img src="monet_home.jpg" alt="Monet Home">
-    </div>
+  
+  <!-- MOUNTAIN IMAGE TOP SECTION -->
 
+  <div class="top-half">
     <h2 class="small-title">Welcome To</h2>
     <h1 class="main-title">
       <span class="line1">Gina's</span>
-      <span class="line2"><em>Collected Memories</em></span>
-    </h1>
-  </div>
+      <span class="line2">Collected Memories</span>
+
+    </a>
+      
+  <!-- Top Section with Fading Images -->
+
+<div class="top-half">
+  <!-- Image Fade Container -->
+  <div class="image-fade-container">
+    <img src="IMG_1802_VSCO.jpg" alt="Mountain">
+    <img src="giverny_garden.jpg" alt="Giverny Garden">
+    <img src="Bar_Hemingway.jpg" alt="Bar Hemingway">
+    <img src="Sko_Buffs.jpg" alt="Sko Buffs">
+
+  <!-- Text on top -->
+  <h2 class="small-title">Welcome To</h2>
+  <h1 class="main-title">
+    <span class="line1">Gina's</span>
+    <span class="line2"><em>Collected Memories</em></span>
+
+  </a>
 
   <!-- WHITE SECTION -->
   <div class="white-section">
