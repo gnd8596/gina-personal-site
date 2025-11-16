@@ -76,7 +76,7 @@
       height: 100%;
       object-fit: cover;
       opacity: 0;
-      animation: fadeZoom 25s infinite;
+      animation: fade 25s infinite;
     } 
 
     .image-fade-container img:nth-child(1) { animation-delay: 0s; }
@@ -85,13 +85,13 @@
     .image-fade-container img:nth-child(4) { animation-delay: 15s; }
     .image-fade-container img:nth-child(5) { animation-delay: 20s; }
 
-    @keyframes fadeZoom {
-      0% { opacity: 0; transform: scale(1); }
-      10% { opacity: 1; transform: scale(1.02); }
-      30% { opacity: 1; transform: scale(1.05); }
-      40% { opacity: 0; transform: scale(1.05); }
-      100% { opacity: 0; transform: scale(1); }
-    }
+    @keyframes fade {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  30% { opacity: 1; }
+  40% { opacity: 0; }
+  100% { opacity: 0; }
+}
     
     /* Overlay for readability */
    .top-half::before {
