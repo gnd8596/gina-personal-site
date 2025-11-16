@@ -35,7 +35,8 @@
     }
 
     .bottom-half {
-      min-height: 50vh; /* Bottom half of the screen */
+      min-height: 50vh;
+      position: relative;
       background-image: url('IMG_1802_VSCO.jpg');
       background-size: cover;
       background-position: center;
@@ -47,7 +48,22 @@
       align-items: center;
       text-align: center;
       padding: 20px;
+      overflow: hidden;
     }
+
+    .school-logo {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  height: 40px;       /* Set a fixed height */
+  width: auto;        /* Maintain aspect ratio */
+  margin-right: 10px;
+}
+
+/* Second logo slightly to the right */
+.school-logo:nth-of-type(2) {
+  left: 60px;         /* Adjust spacing between logos */
+}
   </style>
 </head>
 <body>
