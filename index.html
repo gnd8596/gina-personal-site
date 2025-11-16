@@ -110,6 +110,15 @@
       z-index: 2;
       margin: 5px 0;
     }
+
+  /* Ensure text stays above images */
+.top-half > h2,
+.top-half > h1,
+.top-half > a {
+  position: relative;
+  z-index: 1;
+
+}
     
     /* Titles */
     .small-title {
@@ -231,16 +240,6 @@
       <span class="line2"><em>Collected Memories</em></span>
     </h1>
   </div>
-
-
-/* Ensure text stays above images */
-.top-half > h2,
-.top-half > h1,
-.top-half > a {
-  position: relative;
-  z-index: 1;
-
-}
 
   <!-- WHITE SECTION -->
   <div class="white-section">
