@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Gina's Website</title>
-<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400&display=swap" rel="stylesheet">
   <style>
 
   /* HEADER FONT */
@@ -20,70 +20,59 @@
     text-align: center;
   }
 
-  h1 {
-    font-family: 'Frank Ruhl Libre', serif;
-    font-style: italic;
-    margin-bottom: 0.2em;
-  }
-
-  p {
-    margin-top: 0.2em;
-  }
-
   /* HEADER */
-.site-header {
-  width: 100%;
-  background-color: rgba(225, 225, 225, 0.9);
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  padding: 15px 80px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-sizing: border-box;
-}
+  .site-header {
+    width: 100%;
+    background-color: rgba(225, 225, 225, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 15px 80px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+  }
 
-.header-left {
-  display: flex;
-  align-items: center;
-}
+  .header-left {
+    display: flex;
+    align-items: center;
+  }
 
-.school-logo {
-  height: 50px;  
-  margin-right: 10px; /* space between logos */
-  flex-shrink: 0; /* prevent shrinking */
-}
+  .school-logo {
+    height: 50px;  
+    margin-right: 10px;
+    flex-shrink: 0;
+  }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  justify-content: flex-end;
-  margin: 0;
-  padding: 0;
-  flex-wrap: nowrap; /* prevent wrapping */
-}
+  .nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+    flex-wrap: nowrap;
+  }
 
-.nav-links li {
-  margin-left: 30px;
-}
+  .nav-links li {
+    margin-left: 30px;
+  }
 
-.nav-links a {
-  text-decoration: none;
-  color: #333;
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  font-size: 1.2rem;
-  transition: opacity 0.3s;
-  white-space: nowrap; /* prevent cutting off */
-}
+  .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-size: 1.2rem;
+    transition: opacity 0.3s;
+    white-space: nowrap;
+  }
 
-.nav-links a:hover {
-  opacity: 0.6;
-}
-
+  .nav-links a:hover {
+    opacity: 0.6;
+  }
 
   /* TOP SECTION WITH MOUNTAIN IMAGE */
   .top-half {
@@ -94,12 +83,15 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
-    /* overlay for readability */
     color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
 
-  /* White semi-transparent overlay */
+  /* Black overlay for readability */
   .top-half::before {
     content: "";
     position: absolute;
@@ -117,35 +109,52 @@
   }
 
   /* Title + subtitle */
-  .top-half h1,
-  .top-half p,
+  .small-title {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  .main-title {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 4rem;
+    margin: 10px 0 20px 0;
+    font-style: italic;
+  }
+
+  /* Split main title into two lines */
+  .main-title .line1,
+  .main-title .line2 {
+    display: block;
+    text-align: center;
+  }
+
   .top-half a {
     color: white;
+    text-decoration: underline;
   }
 
   .top-half a:hover {
     color: #f0f0f0;
   }
 
-  /* LOGOS IN TOP SECTION */
-  .school-logo {
-    position: absolute;
-    width: auto;
-    z-index: 2;
-  }
-
+  /* Logos inside top section */
   .nyu-logo {
+    position: absolute;
     top: 40px;
     left: 20px;
     height: 80px;
     transform: rotate(-5deg);
+    z-index: 2;
   }
 
   .cu-logo {
+    position: absolute;
     top: 140px;
     left: 120px;
     height: 60px;
     transform: rotate(5deg);
+    z-index: 2;
   }
 
   </style>
@@ -153,30 +162,32 @@
 
 <body>
 
-  <!-- Header -->
+  <!-- HEADER -->
   <header class="site-header">
-  <div class="header-left">
-    <img src="Nyu_short_color.svg.png" alt="NYU Logo" class="school-logo nyu-logo">
-    <img src="University_of_Colorado_Boulder_logo copy.png" alt="CU Boulder Logo" class="school-logo cu-logo">
-  </div>
-  <nav>
-    <ul class="nav-links">
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
-  
+    <div class="header-left">
+      <img src="Nyu_short_color.svg.png" alt="NYU Logo" class="school-logo nyu-logo">
+      <img src="University_of_Colorado_Boulder_logo copy.png" alt="CU Boulder Logo" class="school-logo cu-logo">
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
   <!-- TOP SECTION WITH IMAGE + TITLE -->
   <div class="top-half">
-
-    <div class="top-half">
-  <h2 class="small-title">Welcome To</h2>
-  <h1 class="main-title">Gina's Collected Memories</h1>
-  <a href="https://scholar.colorado.edu/concern/undergraduate_honors_theses/p8418p875">
-    Undergraduate Honors Thesis
-  </a>
+    <h2 class="small-title">Welcome To</h2>
+    <h1 class="main-title">
+      <span class="line1">Gina's</span>
+      <span class="line2">Collected Memories</span>
+    </h1>
+    <a href="https://scholar.colorado.edu/concern/undergraduate_honors_theses/p8418p875">
+      Undergraduate Honors Thesis
+    </a>
   </div>
 
 </body>
 </html>
+
