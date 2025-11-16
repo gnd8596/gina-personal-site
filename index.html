@@ -80,10 +80,12 @@
       animation: fade 25s infinite;
     } 
 
-  .image-fade-container img:nth-child(1) { animation-delay: 0s; }
-.image-fade-container img:nth-child(2) { animation-delay: 4s; }
-.image-fade-container img:nth-child(3) { animation-delay: 8s; }
-.image-fade-container img:nth-child(4) { animation-delay: 12s; }
+.image-fade-container img:nth-child(1) { animation-delay: 0s; }
+.image-fade-container img:nth-child(2) { animation-delay: 5s; }
+.image-fade-container img:nth-child(3) { animation-delay: 10s; }
+.image-fade-container img:nth-child(4) { animation-delay: 15s; }
+.image-fade-container img:nth-child(5) { animation-delay: 20s; }
+
 
 @keyframes fade {
   0% { opacity: 0; }
@@ -93,7 +95,15 @@
   100% { opacity: 0; }
 
 }
-    
+
+ /* Ensure text stays above images */
+.top-half > h2,
+.top-half > h1,
+.top-half > a {
+  position: relative;
+  z-index: 1;
+
+}
     /* Overlay for readability */
    .top-half::before {
   content: "";
@@ -110,15 +120,6 @@
       z-index: 2;
       margin: 5px 0;
     }
-
-  /* Ensure text stays above images */
-.top-half > h2,
-.top-half > h1,
-.top-half > a {
-  position: relative;
-  z-index: 1;
-
-}
     
     /* Titles */
     .small-title {
